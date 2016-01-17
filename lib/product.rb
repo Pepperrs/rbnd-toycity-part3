@@ -11,7 +11,8 @@ class Product
 
   def valid?(new_content)
     Product.all.each do |existing_product|
-      fail "DuplicateProductError: 'LEGO Iron Man vs. Ultron' already exists." if existing_product.content[:name] == new_content[:name]
+      puts existing_product
+      puts "DuplicateProductError: #{new_content[:name]} already exists." if existing_product.content[:name] == new_content[:name]
     end
     true
   end
